@@ -1,0 +1,22 @@
+
+title: Pórtifólio de Análises de Dados
+author: Bruno Souza
+logo: logo.png
+
+repository:
+  url: https://github.com/BruninSouza/Portifolio_Analises_Dados
+  branch: main
+
+launch_buttons:
+  binderhub_url: "https://mybinder.org"
+  colab_url: "https://colab.research.google.com"
+
+on:
+  push:
+    branches:
+      - main # ou master
+
+html:
+  use_issues_button: true
+  use_repository_button: true
+  toggle_theme: true
