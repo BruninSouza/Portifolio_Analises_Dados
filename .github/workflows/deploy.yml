@@ -1,0 +1,37 @@
+name: build and deploy
+
+on:
+  push:
+    branches:
+      - main # O branch principal do seu repositório
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install Pipenv
+        run: pip install pipenv
+
+      - name: Install dependencies
+        # Instala as dependências a partir do Pipfile.lock.
+        # O --dev garante a instalação de dependências de desenvolvimento.
+        run: pipenv install --dev
+
+      - name: Build the book
+        # O 'pipenv run' executa o comando 'jupyter-book' dentro do ambiente virtual.
+        run: pipenv run jupyter-book build .
+
+      - name: Deploy to GitHub Pages
+        # Este passo usa a ação 'peaceiris' para publicar o conteúdo da pasta _build/html
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: _build/html
