@@ -1,0 +1,2529 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Análise de dados dos deputados da Paraíba &#8212; Pórtifólio de Análises de Dados</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/relatorio';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Welcome to your Jupyter Book" href="../intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Pórtifólio de Análises de Dados - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Pórtifólio de Análises de Dados - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Análise de dados dos deputados da Paraíba</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/BruninSouza/Portifolio_Analises_Dados/main?urlpath=tree/notebooks/relatorio.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/BruninSouza/Portifolio_Analises_Dados/blob/main/notebooks/relatorio.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/BruninSouza/Portifolio_Analises_Dados" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/BruninSouza/Portifolio_Analises_Dados/issues/new?title=Issue%20on%20page%20%2Fnotebooks/relatorio.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/relatorio.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Análise de dados dos deputados da Paraíba</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#carregamento-dos-dados">Carregamento dos dados</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analise-exploratoria-de-dados">1 Análise exploratória de dados</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analise-por-genero">1.1 Análise por gênero</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#quantidade-de-candidatos-por-genero">1.1.1 Quantidade de candidatos por gênero</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#verificando-a-quantidade-de-candidatos-eleitos-por-genero">1.1.2 Verificando a quantidade de candidatos eleitos por gênero</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#media-de-dados-importantes-entre-cadidatos-por-genero">1.1.3 Média de dados importantes entre cadidatos por gênero</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-1-1">Gráfico 1.1</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#medidas-de-centralidade-e-variancia-dos-candidatos-por-genero">1.1.4 Medidas de centralidade e variância dos candidatos por gênero</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analise-por-cor-ou-raca">1.2 Análise por cor ou raça</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#quantidade-de-candidatos-por-cor-ou-raca">1.2.1 Quantidade de candidatos por cor ou raça</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#verificando-a-quantidade-de-candidatos-eleitos-por-cor-ou-raca">1.2.2 Verificando a quantidade de candidatos eleitos por cor ou raça</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#media-de-dados-importantes-entre-candidatos-com-base-em-sua-cor-ou-raca">1.2.3 Média de dados importantes entre candidatos com base em sua cor ou raça</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-1-2">Gráfico 1.2</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#medidas-de-centralidade-e-variancia-dos-candidatos-por-cor-ou-raca">1.2.4 Medidas de centralidade e variância dos candidatos por cor ou raça</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analise-por-ocupacao">1.3 Análise por ocupação</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#quantidade-de-candidatos-por-ocupacao">1.3.1 Quantidade de candidatos por ocupação</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#verificando-a-quantidade-de-candidatos-eleitos-por-ocupacao">1.3.2 Verificando a quantidade de candidatos eleitos por ocupação</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#media-dos-dados-importantes-entre-os-candidatos-por-ocupacao">1.3.3 Média dos dados importantes entre os candidatos por ocupação</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#medidas-de-centralidade-e-variancia-dos-candidatos-por-ocupacao">1.3.4 Medidas de centralidade e variância dos candidatos por ocupação</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analise-por-partido-politico">1.4 Análise por partido político</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#quantidade-de-candidatos-por-partido">1.4.1 Quantidade de candidatos por partido</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#verificando-a-quantidade-de-cadidantos-eleitos-por-partido">1.4.2 Verificando a quantidade de cadidantos eleitos por partido</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#media-dos-dados-importantes-entre-os-candidatos-por-partido">1.4.3 Média dos dados importantes entre os candidatos por partido</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-1-3">Gráfico 1.3</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#medidas-de-centralidade-e-variancia-por-partido">1.4.4 Medidas de centralidade e variância por partido</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analise-por-escolaridade">1.5 Análise por escolaridade</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#quantidade-de-candidatos-por-grau-de-escolaridade">1.5.1 Quantidade de candidatos por grau de escolaridade</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#verificando-a-quantidade-de-candidatos-eleitos-por-grau-de-escolaridade">1.5.2 Verificando a quantidade de candidatos eleitos por grau de escolaridade</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#media-dos-dados-importantes-entre-os-candidatos-por-grau-de-escolaridade">1.5.3 Média dos dados importantes entre os candidatos por grau de escolaridade</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-1-4">Gráfico 1.4</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#medidas-de-centralidade-e-variancia-por-grau-de-escolaridade">1.5.4 Medidas de centralidade e variância por grau de escolaridade</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analise-das-relacoes-entre-variaveis">2 Análise das relações entre variáveis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#averiguando-se-existe-alguma-correlacao-entre-o-numero-de-votos-e-a-receita-gasta-na-campanha">2.1 Averiguando se existe alguma correlação entre o número de votos e a receita gasta na campanha</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-2-1">Gráfico 2.1</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verificando-se-ha-alguma-relacao-entre-os-bens-dos-candidatos-e-os-a-quantidade-de-votos-recebidos">2.2 Verificando se há alguma relação entre os bens dos candidatos e os a quantidade de votos recebidos</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-2-2">Gráfico 2.2</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#investigando-se-a-idade-dos-candidatos-influencia-a-quantidade-de-dinheiro-gasto-na-campanha">2.3 Investigando se a idade dos candidatos influencia a quantidade de dinheiro gasto na campanha</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-2-3">Gráfico 2.3</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analise-de-regressao">3 Análise de regressão</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisando-se-e-possivel-prever-a-quantia-de-receita-gasta-ideal-para-um-candidato-se-eleger-numa-campanha">3.1 Analisando se é possivel prever a quantia de receita gasta ideal para um candidato se eleger numa campanha</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="analise-de-dados-dos-deputados-da-paraiba">
+<h1>Análise de dados dos deputados da Paraíba<a class="headerlink" href="#analise-de-dados-dos-deputados-da-paraiba" title="Link to this heading">#</a></h1>
+<p>Você deve usar os dados das eleições do TSE para entender os fatores que influenciam a votação dos candidatos usando modelos de regressão e outras análises estatísticas. Nesta atividade, vocês devem concentrar a análise em candidatos a deputado estadual na Paraíba em 2022. Os dados que combinam informações de votação, receitas de campanha e bens dos candidatos estão no arquivo <code class="docutils literal notranslate"><span class="pre">dados/eleicao_2022_pb_deputado_estadual.csv</span></code>. A análise deve ser feita neste relatório Jupyter Notebook. O relatório já possui algumas perguntas a serem respondidas. Use as perguntas como base, mas não fique preso a elas. Você pode fazer novas perguntas e novas análises à vontade.</p>
+<section id="carregamento-dos-dados">
+<h2>Carregamento dos dados<a class="headerlink" href="#carregamento-dos-dados" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">statistics</span><span class="w"> </span><span class="kn">import</span> <span class="n">mode</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.linear_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">LinearRegression</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.impute</span><span class="w"> </span><span class="kn">import</span> <span class="n">SimpleImputer</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">mean_squared_error</span><span class="p">,</span> <span class="n">r2_score</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="n">caminho_raiz</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span><span class="o">.</span><span class="n">parent</span>
+<span class="n">candidatos</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">caminho_raiz</span> <span class="o">/</span> <span class="s2">&quot;data&quot;</span> <span class="o">/</span> <span class="s2">&quot;eleicao_2022_pb_deputado_estadual.csv&quot;</span><span class="p">)</span>
+<span class="n">candidatos</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>SQ_CANDIDATO</th>
+      <th>ANO_ELEICAO</th>
+      <th>SG_UF</th>
+      <th>DS_CARGO</th>
+      <th>NR_CANDIDATO</th>
+      <th>NM_URNA_CANDIDATO</th>
+      <th>SG_PARTIDO</th>
+      <th>DT_NASCIMENTO</th>
+      <th>NR_IDADE_DATA_POSSE</th>
+      <th>DS_GENERO</th>
+      <th>DS_GRAU_INSTRUCAO</th>
+      <th>DS_ESTADO_CIVIL</th>
+      <th>DS_COR_RACA</th>
+      <th>DS_OCUPACAO</th>
+      <th>VR_DESPESA_MAX_CAMPANHA</th>
+      <th>DS_SIT_TOT_TURNO</th>
+      <th>QT_VOTOS</th>
+      <th>VR_RECEITA</th>
+      <th>VR_BEM_CANDIDATO</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>150001643207</td>
+      <td>2022</td>
+      <td>PB</td>
+      <td>DEPUTADO ESTADUAL</td>
+      <td>13999</td>
+      <td>NAL DA BANCA</td>
+      <td>PT</td>
+      <td>30/11/1983</td>
+      <td>39</td>
+      <td>MASCULINO</td>
+      <td>ENSINO MÉDIO COMPLETO</td>
+      <td>SOLTEIRO(A)</td>
+      <td>BRANCA</td>
+      <td>COMERCIANTE</td>
+      <td>1270629.01</td>
+      <td>SUPLENTE</td>
+      <td>331.0</td>
+      <td>6000.00</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>150001718492</td>
+      <td>2022</td>
+      <td>PB</td>
+      <td>DEPUTADO ESTADUAL</td>
+      <td>36013</td>
+      <td>NILDÃO É POVÃO</td>
+      <td>AGIR</td>
+      <td>22/04/1961</td>
+      <td>61</td>
+      <td>MASCULINO</td>
+      <td>SUPERIOR COMPLETO</td>
+      <td>CASADO(A)</td>
+      <td>PARDA</td>
+      <td>ADMINISTRADOR</td>
+      <td>1270629.01</td>
+      <td>NÃO ELEITO</td>
+      <td>123.0</td>
+      <td>1347.25</td>
+      <td>200000.00</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>150001718098</td>
+      <td>2022</td>
+      <td>PB</td>
+      <td>DEPUTADO ESTADUAL</td>
+      <td>15789</td>
+      <td>ANDRE GADELHA</td>
+      <td>MDB</td>
+      <td>10/04/1975</td>
+      <td>47</td>
+      <td>MASCULINO</td>
+      <td>SUPERIOR COMPLETO</td>
+      <td>CASADO(A)</td>
+      <td>PARDA</td>
+      <td>ADMINISTRADOR</td>
+      <td>1270629.01</td>
+      <td>SUPLENTE</td>
+      <td>18374.0</td>
+      <td>168500.00</td>
+      <td>1387610.47</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>150001718219</td>
+      <td>2022</td>
+      <td>PB</td>
+      <td>DEPUTADO ESTADUAL</td>
+      <td>22122</td>
+      <td>CICINHO LIMA</td>
+      <td>PL</td>
+      <td>04/09/1974</td>
+      <td>48</td>
+      <td>MASCULINO</td>
+      <td>ENSINO MÉDIO COMPLETO</td>
+      <td>CASADO(A)</td>
+      <td>PRETA</td>
+      <td>CANTOR E COMPOSITOR</td>
+      <td>1270629.01</td>
+      <td>SUPLENTE</td>
+      <td>15703.0</td>
+      <td>226765.60</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>150001621356</td>
+      <td>2022</td>
+      <td>PB</td>
+      <td>DEPUTADO ESTADUAL</td>
+      <td>45745</td>
+      <td>ROSA TORREÃO</td>
+      <td>PSDB</td>
+      <td>26/07/1980</td>
+      <td>42</td>
+      <td>FEMININO</td>
+      <td>ENSINO FUNDAMENTAL INCOMPLETO</td>
+      <td>CASADO(A)</td>
+      <td>PARDA</td>
+      <td>CABELEIREIRO E BARBEIRO</td>
+      <td>1270629.01</td>
+      <td>SUPLENTE</td>
+      <td>163.0</td>
+      <td>31500.00</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>456</th>
+      <td>150001718225</td>
+      <td>2022</td>
+      <td>PB</td>
+      <td>DEPUTADO ESTADUAL</td>
+      <td>22300</td>
+      <td>WELLINGTON CARNEIRO</td>
+      <td>PL</td>
+      <td>02/07/1969</td>
+      <td>53</td>
+      <td>MASCULINO</td>
+      <td>SUPERIOR COMPLETO</td>
+      <td>SOLTEIRO(A)</td>
+      <td>PARDA</td>
+      <td>OUTROS</td>
+      <td>1270629.01</td>
+      <td>SUPLENTE</td>
+      <td>182.0</td>
+      <td>15000.00</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>457</th>
+      <td>150001603148</td>
+      <td>2022</td>
+      <td>PB</td>
+      <td>DEPUTADO ESTADUAL</td>
+      <td>44112</td>
+      <td>PASTOR PAULINHO PAZ</td>
+      <td>UNIÃO</td>
+      <td>28/03/1985</td>
+      <td>37</td>
+      <td>MASCULINO</td>
+      <td>SUPERIOR INCOMPLETO</td>
+      <td>CASADO(A)</td>
+      <td>BRANCA</td>
+      <td>OUTROS</td>
+      <td>1270629.01</td>
+      <td>NÃO ELEITO</td>
+      <td>90.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>458</th>
+      <td>150001718212</td>
+      <td>2022</td>
+      <td>PB</td>
+      <td>DEPUTADO ESTADUAL</td>
+      <td>22001</td>
+      <td>PROF SGT JOELSON</td>
+      <td>PL</td>
+      <td>15/03/1963</td>
+      <td>59</td>
+      <td>MASCULINO</td>
+      <td>SUPERIOR COMPLETO</td>
+      <td>CASADO(A)</td>
+      <td>PARDA</td>
+      <td>OUTROS</td>
+      <td>1270629.01</td>
+      <td>SUPLENTE</td>
+      <td>2228.0</td>
+      <td>15011.65</td>
+      <td>22000.00</td>
+    </tr>
+    <tr>
+      <th>459</th>
+      <td>150001725483</td>
+      <td>2022</td>
+      <td>PB</td>
+      <td>DEPUTADO ESTADUAL</td>
+      <td>12321</td>
+      <td>CONCEIÇÃO OLIVEIRA</td>
+      <td>PDT</td>
+      <td>08/12/1995</td>
+      <td>27</td>
+      <td>FEMININO</td>
+      <td>ENSINO MÉDIO COMPLETO</td>
+      <td>SOLTEIRO(A)</td>
+      <td>PARDA</td>
+      <td>ESTUDANTE, BOLSISTA, ESTAGIÁRIO E ASSEMELHADOS</td>
+      <td>1270629.01</td>
+      <td>#NULO#</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>460</th>
+      <td>150001718205</td>
+      <td>2022</td>
+      <td>PB</td>
+      <td>DEPUTADO ESTADUAL</td>
+      <td>22444</td>
+      <td>JOSMA OLIVEIRA</td>
+      <td>PL</td>
+      <td>25/09/1982</td>
+      <td>40</td>
+      <td>MASCULINO</td>
+      <td>SUPERIOR COMPLETO</td>
+      <td>SOLTEIRO(A)</td>
+      <td>BRANCA</td>
+      <td>EMPRESÁRIO</td>
+      <td>1270629.01</td>
+      <td>SUPLENTE</td>
+      <td>3891.0</td>
+      <td>17500.00</td>
+      <td>147978.91</td>
+    </tr>
+  </tbody>
+</table>
+<p>461 rows × 19 columns</p>
+</div></div></div>
+</div>
+</section>
+<section id="analise-exploratoria-de-dados">
+<h2>1 Análise exploratória de dados<a class="headerlink" href="#analise-exploratoria-de-dados" title="Link to this heading">#</a></h2>
+<p>Inicialmente, faça uma análise exploratória das variáveis que você considerar mais importantes para a análise.</p>
+<section id="analise-por-genero">
+<h3>1.1 Análise por gênero<a class="headerlink" href="#analise-por-genero" title="Link to this heading">#</a></h3>
+<section id="quantidade-de-candidatos-por-genero">
+<h4>1.1.1 Quantidade de candidatos por gênero<a class="headerlink" href="#quantidade-de-candidatos-por-genero" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">candidatos</span><span class="p">[[</span><span class="s1">&#39;DS_GENERO&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DS_GENERO
+MASCULINO    300
+FEMININO     161
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="verificando-a-quantidade-de-candidatos-eleitos-por-genero">
+<h4>1.1.2 Verificando a quantidade de candidatos eleitos por gênero<a class="headerlink" href="#verificando-a-quantidade-de-candidatos-eleitos-por-genero" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eleitos_qt_media</span> <span class="o">=</span> <span class="n">candidatos</span><span class="p">[(</span><span class="n">candidatos</span><span class="p">[</span><span class="s1">&#39;DS_SIT_TOT_TURNO&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;ELEITO POR QP&#39;</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">candidatos</span><span class="p">[</span><span class="s1">&#39;DS_SIT_TOT_TURNO&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;ELEITO POR MÉDIA&#39;</span><span class="p">)]</span>
+<span class="n">generoEleitos</span> <span class="o">=</span> <span class="n">eleitos_qt_media</span><span class="p">[</span><span class="s1">&#39;DS_GENERO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">generoEleitos</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DS_GENERO
+MASCULINO    30
+FEMININO      6
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="media-de-dados-importantes-entre-cadidatos-por-genero">
+<h4>1.1.3 Média de dados importantes entre cadidatos por gênero<a class="headerlink" href="#media-de-dados-importantes-entre-cadidatos-por-genero" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colunas_excluir</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;SQ_CANDIDATO&#39;</span><span class="p">,</span> <span class="s1">&#39;ANO_ELEICAO&#39;</span><span class="p">,</span> <span class="s1">&#39;NR_CANDIDATO&#39;</span><span class="p">,</span> <span class="s1">&#39;VR_DESPESA_MAX_CAMPANHA&#39;</span><span class="p">]</span>
+<span class="n">dados_selecionados</span> <span class="o">=</span> <span class="n">candidatos</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">colunas_excluir</span><span class="p">)</span>
+
+<span class="n">mediaGenero</span> <span class="o">=</span> <span class="n">dados_selecionados</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;DS_GENERO&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">round</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mediaGenero</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>           NR_IDADE_DATA_POSSE  QT_VOTOS  VR_RECEITA  VR_BEM_CANDIDATO
+DS_GENERO                                                             
+FEMININO                 45.55   3013.74    93170.92         551117.48
+MASCULINO                48.31   5908.35    79321.60        1053419.30
+</pre></div>
+</div>
+</div>
+</div>
+<section id="grafico-1-1">
+<h5>Gráfico 1.1<a class="headerlink" href="#grafico-1-1" title="Link to this heading">#</a></h5>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">candidatos</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;DS_GENERO&#39;</span><span class="p">,</span>
+  <span class="n">column</span><span class="o">=</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/d9efa476bedb8452a061cf261fe5ce643faa99983a361bf8882cb96012501496.png" src="../_images/d9efa476bedb8452a061cf261fe5ce643faa99983a361bf8882cb96012501496.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="medidas-de-centralidade-e-variancia-dos-candidatos-por-genero">
+<h4>1.1.4 Medidas de centralidade e variância dos candidatos por gênero<a class="headerlink" href="#medidas-de-centralidade-e-variancia-dos-candidatos-por-genero" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Homens</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">candidatosHomens</span> <span class="o">=</span> <span class="n">candidatos</span><span class="p">[</span><span class="n">candidatos</span><span class="p">[</span><span class="s1">&#39;DS_GENERO&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;MASCULINO&#39;</span><span class="p">]</span>
+<span class="n">media</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">candidatosHomens</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">mediana</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">candidatosHomens</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">moda</span> <span class="o">=</span> <span class="n">mode</span><span class="p">(</span><span class="n">candidatosHomens</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">variancia</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">candidatosHomens</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">desvio_padrao</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">candidatosHomens</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+
+<span class="n">resultados</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;Medidas de Centralidade:</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Média: </span><span class="si">{</span><span class="n">media</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Mediana: </span><span class="si">{</span><span class="n">mediana</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Moda: </span><span class="si">{</span><span class="n">moda</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+    <span class="s2">&quot;Medidas de Dispersão:</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Variância: </span><span class="si">{</span><span class="n">variancia</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Desvio Padrão: </span><span class="si">{</span><span class="n">desvio_padrao</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">resultados</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Medidas de Centralidade:
+Média: 5908.35
+Mediana: nan
+Moda: 6.0
+
+Medidas de Dispersão:
+Variância: 140903870.18
+Desvio Padrão: 11870.29
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Mulheres</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">candidatasMulheres</span> <span class="o">=</span> <span class="n">candidatos</span><span class="p">[</span><span class="n">candidatos</span><span class="p">[</span><span class="s1">&#39;DS_GENERO&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;FEMININO&#39;</span><span class="p">]</span>
+<span class="n">media</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">candidatasMulheres</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">mediana</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">candidatasMulheres</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">moda</span> <span class="o">=</span> <span class="n">mode</span><span class="p">(</span><span class="n">candidatasMulheres</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">variancia</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">candidatasMulheres</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">desvio_padrao</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">candidatasMulheres</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+
+<span class="n">resultados</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;Medidas de Centralidade:</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Média: </span><span class="si">{</span><span class="n">media</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Mediana: </span><span class="si">{</span><span class="n">mediana</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Moda: </span><span class="si">{</span><span class="n">moda</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+    <span class="s2">&quot;Medidas de Dispersão:</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Variância: </span><span class="si">{</span><span class="n">variancia</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Desvio Padrão: </span><span class="si">{</span><span class="n">desvio_padrao</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">resultados</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Medidas de Centralidade:
+Média: 3013.74
+Mediana: nan
+Moda: 22.0
+
+Medidas de Dispersão:
+Variância: 65927827.30
+Desvio Padrão: 8119.60
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="analise-por-cor-ou-raca">
+<h3>1.2 Análise por cor ou raça<a class="headerlink" href="#analise-por-cor-ou-raca" title="Link to this heading">#</a></h3>
+<section id="quantidade-de-candidatos-por-cor-ou-raca">
+<h4>1.2.1 Quantidade de candidatos por cor ou raça<a class="headerlink" href="#quantidade-de-candidatos-por-cor-ou-raca" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">candidatos</span><span class="p">[[</span><span class="s1">&#39;DS_COR_RACA&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DS_COR_RACA
+PARDA          229
+BRANCA         165
+PRETA           64
+INDÍGENA         2
+AMARELA          1
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="verificando-a-quantidade-de-candidatos-eleitos-por-cor-ou-raca">
+<h4>1.2.2 Verificando a quantidade de candidatos eleitos por cor ou raça<a class="headerlink" href="#verificando-a-quantidade-de-candidatos-eleitos-por-cor-ou-raca" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">racaEleitas</span> <span class="o">=</span> <span class="n">eleitos_qt_media</span><span class="p">[</span><span class="s1">&#39;DS_COR_RACA&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">racaEleitas</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DS_COR_RACA
+BRANCA    23
+PARDA     12
+PRETA      1
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="media-de-dados-importantes-entre-candidatos-com-base-em-sua-cor-ou-raca">
+<h4>1.2.3 Média de dados importantes entre candidatos com base em sua cor ou raça<a class="headerlink" href="#media-de-dados-importantes-entre-candidatos-com-base-em-sua-cor-ou-raca" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">disc_media</span> <span class="o">=</span> <span class="n">dados_selecionados</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;DS_COR_RACA&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">round</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">disc_media</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             NR_IDADE_DATA_POSSE  QT_VOTOS  VR_RECEITA  VR_BEM_CANDIDATO
+DS_COR_RACA                                                             
+AMARELA                    42.00     45.00    10000.00               NaN
+BRANCA                     48.99   7901.92   117763.83         854682.33
+INDÍGENA                   48.50    445.00    32399.00               NaN
+PARDA                      46.00   3444.10    68911.45         400927.49
+PRETA                      47.94   2081.68    56723.64        3812109.47
+</pre></div>
+</div>
+</div>
+</div>
+<section id="grafico-1-2">
+<h5>Gráfico 1.2<a class="headerlink" href="#grafico-1-2" title="Link to this heading">#</a></h5>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">candidatos</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;DS_COR_RACA&#39;</span><span class="p">,</span>
+  <span class="n">column</span><span class="o">=</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/5bc85aa03e64657c77da9ece09a446b4e1f10ab267315228b7f03fd6768a3a10.png" src="../_images/5bc85aa03e64657c77da9ece09a446b4e1f10ab267315228b7f03fd6768a3a10.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="medidas-de-centralidade-e-variancia-dos-candidatos-por-cor-ou-raca">
+<h4>1.2.4 Medidas de centralidade e variância dos candidatos por cor ou raça<a class="headerlink" href="#medidas-de-centralidade-e-variancia-dos-candidatos-por-cor-ou-raca" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Pardos</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">candidatosPardos</span> <span class="o">=</span> <span class="n">candidatos</span><span class="p">[</span><span class="n">candidatos</span><span class="p">[</span><span class="s1">&#39;DS_COR_RACA&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;PARDA&#39;</span><span class="p">]</span>
+<span class="n">media</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">candidatosPardos</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">mediana</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">candidatosPardos</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">moda</span> <span class="o">=</span> <span class="n">mode</span><span class="p">(</span><span class="n">candidatosPardos</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">variancia</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">candidatosPardos</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">desvio_padrao</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">candidatosPardos</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+
+<span class="n">resultados</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;Medidas de Centralidade:</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Média: </span><span class="si">{</span><span class="n">media</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Mediana: </span><span class="si">{</span><span class="n">mediana</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Moda: </span><span class="si">{</span><span class="n">moda</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+    <span class="s2">&quot;Medidas de Dispersão:</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Variância: </span><span class="si">{</span><span class="n">variancia</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Desvio Padrão: </span><span class="si">{</span><span class="n">desvio_padrao</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">resultados</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Medidas de Centralidade:
+Média: 3444.10
+Mediana: nan
+Moda: 79.0
+
+Medidas de Dispersão:
+Variância: 86458620.26
+Desvio Padrão: 9298.31
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Brancos</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">candidatosBrancos</span> <span class="o">=</span> <span class="n">candidatos</span><span class="p">[</span><span class="n">candidatos</span><span class="p">[</span><span class="s1">&#39;DS_COR_RACA&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;BRANCA&#39;</span><span class="p">]</span>
+<span class="n">media</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">candidatosBrancos</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">mediana</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">candidatosBrancos</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">moda</span> <span class="o">=</span> <span class="n">mode</span><span class="p">(</span><span class="n">candidatosBrancos</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">variancia</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">candidatosBrancos</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">desvio_padrao</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">candidatosBrancos</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+
+<span class="n">resultados</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;Medidas de Centralidade:</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Média: </span><span class="si">{</span><span class="n">media</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Mediana: </span><span class="si">{</span><span class="n">mediana</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Moda: </span><span class="si">{</span><span class="n">moda</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+    <span class="s2">&quot;Medidas de Dispersão:</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Variância: </span><span class="si">{</span><span class="n">variancia</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Desvio Padrão: </span><span class="si">{</span><span class="n">desvio_padrao</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">resultados</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Medidas de Centralidade:
+Média: 7901.92
+Mediana: nan
+Moda: 3.0
+
+Medidas de Dispersão:
+Variância: 174290220.20
+Desvio Padrão: 13201.90
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Pretos</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">candidatosPretos</span> <span class="o">=</span> <span class="n">candidatos</span><span class="p">[</span><span class="n">candidatos</span><span class="p">[</span><span class="s1">&#39;DS_COR_RACA&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;PRETA&#39;</span><span class="p">]</span>
+<span class="n">media</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">candidatosPretos</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">mediana</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">candidatosPretos</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">moda</span> <span class="o">=</span> <span class="n">mode</span><span class="p">(</span><span class="n">candidatosPretos</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">variancia</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">candidatosPretos</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">desvio_padrao</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">candidatosPretos</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+
+<span class="n">resultados</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;Medidas de Centralidade:</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Média: </span><span class="si">{</span><span class="n">media</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Mediana: </span><span class="si">{</span><span class="n">mediana</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Moda: </span><span class="si">{</span><span class="n">moda</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+    <span class="s2">&quot;Medidas de Dispersão:</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Variância: </span><span class="si">{</span><span class="n">variancia</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Desvio Padrão: </span><span class="si">{</span><span class="n">desvio_padrao</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">resultados</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Medidas de Centralidade:
+Média: 2081.68
+Mediana: nan
+Moda: 6.0
+
+Medidas de Dispersão:
+Variância: 29491323.72
+Desvio Padrão: 5430.59
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="analise-por-ocupacao">
+<h3>1.3 Análise por ocupação<a class="headerlink" href="#analise-por-ocupacao" title="Link to this heading">#</a></h3>
+<section id="quantidade-de-candidatos-por-ocupacao">
+<h4>1.3.1 Quantidade de candidatos por ocupação<a class="headerlink" href="#quantidade-de-candidatos-por-ocupacao" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">candidatos</span><span class="p">[[</span><span class="s1">&#39;DS_OCUPACAO&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DS_OCUPACAO                                                           
+OUTROS                                                                    85
+EMPRESÁRIO                                                                49
+ADVOGADO                                                                  24
+COMERCIANTE                                                               21
+DEPUTADO                                                                  21
+                                                                          ..
+SERVENTUÁRIO DE JUSTIÇA                                                    1
+SECRETÁRIO,ESTENÓGRAFO,DATILÓGRAFO,RECEPCIONISTA,TELEFONISTA,TAQUÍGRAF     1
+TRADUTOR, INTÉRPRETE E FILÓLOGO                                            1
+TÉCNICO DE LABORATÓRIO E RAIOS X                                           1
+VIGILANTE                                                                  1
+Name: count, Length: 77, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="verificando-a-quantidade-de-candidatos-eleitos-por-ocupacao">
+<h4>1.3.2 Verificando a quantidade de candidatos eleitos por ocupação<a class="headerlink" href="#verificando-a-quantidade-de-candidatos-eleitos-por-ocupacao" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ocupacoes_eleitas</span> <span class="o">=</span> <span class="n">eleitos_qt_media</span><span class="p">[</span><span class="s1">&#39;DS_OCUPACAO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ocupacoes_eleitas</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DS_OCUPACAO
+DEPUTADO                    16
+MÉDICO                       5
+EMPRESÁRIO                   4
+ADVOGADO                     3
+OUTROS                       3
+VEREADOR                     2
+ADMINISTRADOR                1
+FARMACÊUTICO                 1
+SERVIDOR PÚBLICO FEDERAL     1
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="media-dos-dados-importantes-entre-os-candidatos-por-ocupacao">
+<h4>1.3.3 Média dos dados importantes entre os candidatos por ocupação<a class="headerlink" href="#media-dos-dados-importantes-entre-os-candidatos-por-ocupacao" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">media_por_ocupacao</span> <span class="o">=</span> <span class="n">eleitos_qt_media</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;DS_OCUPACAO&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span>
+    <span class="s1">&#39;NR_IDADE_DATA_POSSE&#39;</span><span class="p">:</span> <span class="s1">&#39;mean&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">:</span> <span class="s1">&#39;mean&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;VR_RECEITA&#39;</span><span class="p">:</span> <span class="s1">&#39;mean&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;VR_BEM_CANDIDATO&#39;</span><span class="p">:</span> <span class="s1">&#39;mean&#39;</span>
+<span class="p">})</span>
+
+<span class="n">media_por_ocupacao</span> <span class="o">=</span> <span class="n">media_por_ocupacao</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">media_por_ocupacao</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                          NR_IDADE_DATA_POSSE  QT_VOTOS  VR_RECEITA  \
+DS_OCUPACAO                                                           
+ADMINISTRADOR                           42.00  23577.00    87200.00   
+ADVOGADO                                39.00  31775.00   622455.00   
+DEPUTADO                                51.62  36681.56   310447.79   
+EMPRESÁRIO                              43.50  46242.00   306906.44   
+FARMACÊUTICO                            58.00  22272.00    74389.83   
+MÉDICO                                  51.60  32141.60   256460.68   
+OUTROS                                  61.67  43133.00   360409.86   
+SERVIDOR PÚBLICO FEDERAL                42.00  37235.00   370493.79   
+VEREADOR                                47.00  31344.50   114313.15   
+
+                          VR_BEM_CANDIDATO  
+DS_OCUPACAO                                 
+ADMINISTRADOR                    753251.00  
+ADVOGADO                         932219.90  
+DEPUTADO                        1661781.01  
+EMPRESÁRIO                      1292149.53  
+FARMACÊUTICO                    1157991.98  
+MÉDICO                           813799.16  
+OUTROS                          1408633.43  
+SERVIDOR PÚBLICO FEDERAL         895000.00  
+VEREADOR                         316483.68  
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="medidas-de-centralidade-e-variancia-dos-candidatos-por-ocupacao">
+<h4>1.3.4 Medidas de centralidade e variância dos candidatos por ocupação<a class="headerlink" href="#medidas-de-centralidade-e-variancia-dos-candidatos-por-ocupacao" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Deputado</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">deputado</span> <span class="o">=</span> <span class="n">candidatos</span><span class="p">[</span><span class="n">candidatos</span><span class="p">[</span><span class="s1">&#39;DS_OCUPACAO&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;DEPUTADO&#39;</span><span class="p">]</span>
+<span class="n">media</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">deputado</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">mediana</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">deputado</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">moda</span> <span class="o">=</span> <span class="n">mode</span><span class="p">(</span><span class="n">deputado</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">variancia</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">deputado</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">desvio_padrao</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">deputado</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+
+<span class="n">resultados</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;Medidas de Centralidade:</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Média: </span><span class="si">{</span><span class="n">media</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Mediana: </span><span class="si">{</span><span class="n">mediana</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Moda: </span><span class="si">{</span><span class="n">moda</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+    <span class="s2">&quot;Medidas de Dispersão:</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Variância: </span><span class="si">{</span><span class="n">variancia</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Desvio Padrão: </span><span class="si">{</span><span class="n">desvio_padrao</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">resultados</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Medidas de Centralidade:
+Média: 32729.40
+Mediana: nan
+Moda: 33272.0
+
+Medidas de Dispersão:
+Variância: 133515549.24
+Desvio Padrão: 11554.89
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Médico</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">medico</span> <span class="o">=</span> <span class="n">candidatos</span><span class="p">[</span><span class="n">candidatos</span><span class="p">[</span><span class="s1">&#39;DS_OCUPACAO&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;MÉDICO&#39;</span><span class="p">]</span>
+<span class="n">media</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">medico</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">mediana</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">medico</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">moda</span> <span class="o">=</span> <span class="n">mode</span><span class="p">(</span><span class="n">medico</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">variancia</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">medico</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">desvio_padrao</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">medico</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+
+<span class="n">resultados</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;Medidas de Centralidade:</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Média: </span><span class="si">{</span><span class="n">media</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Mediana: </span><span class="si">{</span><span class="n">mediana</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Moda: </span><span class="si">{</span><span class="n">moda</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+    <span class="s2">&quot;Medidas de Dispersão:</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Variância: </span><span class="si">{</span><span class="n">variancia</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Desvio Padrão: </span><span class="si">{</span><span class="n">desvio_padrao</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">resultados</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Medidas de Centralidade:
+Média: 20283.44
+Mediana: 22778.0
+Moda: 4179.0
+
+Medidas de Dispersão:
+Variância: 219486778.25
+Desvio Padrão: 14815.09
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Empresário</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">empresario</span> <span class="o">=</span> <span class="n">candidatos</span><span class="p">[</span><span class="n">candidatos</span><span class="p">[</span><span class="s1">&#39;DS_OCUPACAO&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;EMPRESÁRIO&#39;</span><span class="p">]</span>
+<span class="n">media</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">empresario</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">mediana</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">empresario</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">moda</span> <span class="o">=</span> <span class="n">mode</span><span class="p">(</span><span class="n">empresario</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">variancia</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">empresario</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">desvio_padrao</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">empresario</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+
+<span class="n">resultados</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;Medidas de Centralidade:</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Média: </span><span class="si">{</span><span class="n">media</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Mediana: </span><span class="si">{</span><span class="n">mediana</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Moda: </span><span class="si">{</span><span class="n">moda</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+    <span class="s2">&quot;Medidas de Dispersão:</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Variância: </span><span class="si">{</span><span class="n">variancia</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Desvio Padrão: </span><span class="si">{</span><span class="n">desvio_padrao</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">resultados</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Medidas de Centralidade:
+Média: 5450.20
+Mediana: nan
+Moda: 22.0
+
+Medidas de Dispersão:
+Variância: 172117565.14
+Desvio Padrão: 13119.36
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Outros</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">outros</span> <span class="o">=</span> <span class="n">candidatos</span><span class="p">[</span><span class="n">candidatos</span><span class="p">[</span><span class="s1">&#39;DS_OCUPACAO&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;OUTROS&#39;</span><span class="p">]</span>
+<span class="n">media</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">outros</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">mediana</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">outros</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">moda</span> <span class="o">=</span> <span class="n">mode</span><span class="p">(</span><span class="n">outros</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">variancia</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">outros</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">desvio_padrao</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">outros</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+
+<span class="n">resultados</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;Medidas de Centralidade:</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Média: </span><span class="si">{</span><span class="n">media</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Mediana: </span><span class="si">{</span><span class="n">mediana</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Moda: </span><span class="si">{</span><span class="n">moda</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+    <span class="s2">&quot;Medidas de Dispersão:</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Variância: </span><span class="si">{</span><span class="n">variancia</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Desvio Padrão: </span><span class="si">{</span><span class="n">desvio_padrao</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">resultados</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Medidas de Centralidade:
+Média: 2212.09
+Mediana: nan
+Moda: 162.0
+
+Medidas de Dispersão:
+Variância: 68628516.34
+Desvio Padrão: 8284.23
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="analise-por-partido-politico">
+<h3>1.4 Análise por partido político<a class="headerlink" href="#analise-por-partido-politico" title="Link to this heading">#</a></h3>
+<section id="quantidade-de-candidatos-por-partido">
+<h4>1.4.1 Quantidade de candidatos por partido<a class="headerlink" href="#quantidade-de-candidatos-por-partido" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">candidatos</span><span class="p">[[</span><span class="s1">&#39;SG_PARTIDO&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SG_PARTIDO   
+PMB              44
+PL               39
+MDB              37
+SOLIDARIEDADE    35
+PSDB             34
+UNIÃO            33
+PT               28
+DC               26
+REDE             25
+PSB              24
+REPUBLICANOS     22
+AGIR             20
+PTB              20
+PRTB             18
+PSD              17
+PP               14
+PSOL             12
+PC do B           6
+PDT               4
+PROS              2
+PV                1
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="verificando-a-quantidade-de-cadidantos-eleitos-por-partido">
+<h4>1.4.2 Verificando a quantidade de cadidantos eleitos por partido<a class="headerlink" href="#verificando-a-quantidade-de-cadidantos-eleitos-por-partido" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">partidoEleitos</span> <span class="o">=</span> <span class="n">eleitos_qt_media</span><span class="p">[</span><span class="s1">&#39;SG_PARTIDO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">partidoEleitos</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SG_PARTIDO
+REPUBLICANOS     8
+PSB              6
+PP               4
+PSDB             3
+UNIÃO            3
+PL               3
+PT               2
+MDB              2
+SOLIDARIEDADE    2
+REDE             1
+PSD              1
+PC do B          1
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="media-dos-dados-importantes-entre-os-candidatos-por-partido">
+<h4>1.4.3 Média dos dados importantes entre os candidatos por partido<a class="headerlink" href="#media-dos-dados-importantes-entre-os-candidatos-por-partido" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">disc_media</span> <span class="o">=</span> <span class="n">dados_selecionados</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;SG_PARTIDO&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">round</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">disc_media</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>               NR_IDADE_DATA_POSSE  QT_VOTOS  VR_RECEITA  VR_BEM_CANDIDATO
+SG_PARTIDO                                                                
+AGIR                         47.60    218.63     1347.25         214090.91
+DC                           47.88    256.36    11735.05         246269.23
+MDB                          46.35   2901.51    64601.17        5261591.06
+PC do B                      50.83   7869.50   126562.50         433750.00
+PDT                          42.25    787.00    24555.56         180000.00
+PL                           49.51   5285.29    49566.46         430372.30
+PMB                          44.48    331.11     4650.00         530921.88
+PP                           50.36  16015.93   318830.07         630620.42
+PROS                         31.00     21.00         NaN         213476.07
+PRTB                         46.78    794.41     5305.97         313344.09
+PSB                          53.96  13919.14   111624.43         628624.63
+PSD                          43.35   5957.59   161925.31        1028772.42
+PSDB                         45.09   5913.79   105281.60         941957.60
+PSOL                         49.92    672.00    18937.76         206000.00
+PT                           49.82   3540.07    51649.89         563290.32
+PTB                          47.40    374.45    12676.50         463600.57
+PV                           49.00    107.00         NaN               NaN
+REDE                         45.84   2568.44    62328.12         456425.92
+REPUBLICANOS                 49.23  18874.23   253012.64        1477017.43
+SOLIDARIEDADE                47.60   3743.09    24950.97         283258.97
+UNIÃO                        45.18   5516.81   193040.98         525783.47
+</pre></div>
+</div>
+</div>
+</div>
+<section id="grafico-1-3">
+<h5>Gráfico 1.3<a class="headerlink" href="#grafico-1-3" title="Link to this heading">#</a></h5>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">candidatos</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;SG_PARTIDO&#39;</span><span class="p">,</span>
+  <span class="n">column</span><span class="o">=</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/99908a54540d6aa18ae75bf4add3a937e904f7562487fcf6030d5e3a140d101f.png" src="../_images/99908a54540d6aa18ae75bf4add3a937e904f7562487fcf6030d5e3a140d101f.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="medidas-de-centralidade-e-variancia-por-partido">
+<h4>1.4.4 Medidas de centralidade e variância por partido<a class="headerlink" href="#medidas-de-centralidade-e-variancia-por-partido" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Republicanos</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">republicanos</span> <span class="o">=</span> <span class="n">candidatos</span><span class="p">[</span><span class="n">candidatos</span><span class="p">[</span><span class="s1">&#39;SG_PARTIDO&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;REPUBLICANOS&#39;</span><span class="p">]</span>
+<span class="n">media</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">republicanos</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">mediana</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">republicanos</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">moda</span> <span class="o">=</span> <span class="n">mode</span><span class="p">(</span><span class="n">republicanos</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">variancia</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">republicanos</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">desvio_padrao</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">republicanos</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+
+<span class="n">resultados</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;Medidas de Centralidade:</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Média: </span><span class="si">{</span><span class="n">media</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Mediana: </span><span class="si">{</span><span class="n">mediana</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Moda: </span><span class="si">{</span><span class="n">moda</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+    <span class="s2">&quot;Medidas de Dispersão:</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Variância: </span><span class="si">{</span><span class="n">variancia</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Desvio Padrão: </span><span class="si">{</span><span class="n">desvio_padrao</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">resultados</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Medidas de Centralidade:
+Média: 18874.23
+Mediana: 14220.5
+Moda: 33272.0
+
+Medidas de Dispersão:
+Variância: 369437364.81
+Desvio Padrão: 19220.75
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>PSB</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psb</span> <span class="o">=</span> <span class="n">candidatos</span><span class="p">[</span><span class="n">candidatos</span><span class="p">[</span><span class="s1">&#39;SG_PARTIDO&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;PSB&#39;</span><span class="p">]</span>
+<span class="n">media</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">psb</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">mediana</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">psb</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">moda</span> <span class="o">=</span> <span class="n">mode</span><span class="p">(</span><span class="n">psb</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">variancia</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">psb</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">desvio_padrao</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">psb</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+
+<span class="n">resultados</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;Medidas de Centralidade:</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Média: </span><span class="si">{</span><span class="n">media</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Mediana: </span><span class="si">{</span><span class="n">mediana</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Moda: </span><span class="si">{</span><span class="n">moda</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+    <span class="s2">&quot;Medidas de Dispersão:</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Variância: </span><span class="si">{</span><span class="n">variancia</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Desvio Padrão: </span><span class="si">{</span><span class="n">desvio_padrao</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">resultados</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Medidas de Centralidade:
+Média: 13919.14
+Mediana: nan
+Moda: 42087.0
+
+Medidas de Dispersão:
+Variância: 283689138.57
+Desvio Padrão: 16843.07
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>PP</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pp</span> <span class="o">=</span> <span class="n">candidatos</span><span class="p">[</span><span class="n">candidatos</span><span class="p">[</span><span class="s1">&#39;SG_PARTIDO&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;PP&#39;</span><span class="p">]</span>
+<span class="n">media</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">pp</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">mediana</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">pp</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">moda</span> <span class="o">=</span> <span class="n">mode</span><span class="p">(</span><span class="n">pp</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">variancia</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">pp</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">desvio_padrao</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">pp</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+
+<span class="n">resultados</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;Medidas de Centralidade:</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Média: </span><span class="si">{</span><span class="n">media</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Mediana: </span><span class="si">{</span><span class="n">mediana</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Moda: </span><span class="si">{</span><span class="n">moda</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+    <span class="s2">&quot;Medidas de Dispersão:</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Variância: </span><span class="si">{</span><span class="n">variancia</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Desvio Padrão: </span><span class="si">{</span><span class="n">desvio_padrao</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">resultados</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Medidas de Centralidade:
+Média: 16015.93
+Mediana: 7916.5
+Moda: 5974.0
+
+Medidas de Dispersão:
+Variância: 290633856.78
+Desvio Padrão: 17047.99
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>PSDB</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psdb</span> <span class="o">=</span> <span class="n">candidatos</span><span class="p">[</span><span class="n">candidatos</span><span class="p">[</span><span class="s1">&#39;SG_PARTIDO&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;PSDB&#39;</span><span class="p">]</span>
+<span class="n">media</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">psdb</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">mediana</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">psdb</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">moda</span> <span class="o">=</span> <span class="n">mode</span><span class="p">(</span><span class="n">psdb</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">variancia</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">psdb</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">desvio_padrao</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">psdb</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+
+<span class="n">resultados</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;Medidas de Centralidade:</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Média: </span><span class="si">{</span><span class="n">media</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Mediana: </span><span class="si">{</span><span class="n">mediana</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Moda: </span><span class="si">{</span><span class="n">moda</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+    <span class="s2">&quot;Medidas de Dispersão:</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Variância: </span><span class="si">{</span><span class="n">variancia</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Desvio Padrão: </span><span class="si">{</span><span class="n">desvio_padrao</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">resultados</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Medidas de Centralidade:
+Média: 5913.79
+Mediana: 1231.5
+Moda: 163.0
+
+Medidas de Dispersão:
+Variância: 116201055.10
+Desvio Padrão: 10779.66
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>União</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">uniao</span> <span class="o">=</span> <span class="n">candidatos</span><span class="p">[</span><span class="n">candidatos</span><span class="p">[</span><span class="s1">&#39;SG_PARTIDO&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;UNIÃO&#39;</span><span class="p">]</span>
+<span class="n">media</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">uniao</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">mediana</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">uniao</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">moda</span> <span class="o">=</span> <span class="n">mode</span><span class="p">(</span><span class="n">uniao</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">variancia</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">uniao</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">desvio_padrao</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">uniao</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+
+<span class="n">resultados</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;Medidas de Centralidade:</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Média: </span><span class="si">{</span><span class="n">media</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Mediana: </span><span class="si">{</span><span class="n">mediana</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Moda: </span><span class="si">{</span><span class="n">moda</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+    <span class="s2">&quot;Medidas de Dispersão:</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Variância: </span><span class="si">{</span><span class="n">variancia</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Desvio Padrão: </span><span class="si">{</span><span class="n">desvio_padrao</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">resultados</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Medidas de Centralidade:
+Média: 5516.81
+Mediana: nan
+Moda: 445.0
+
+Medidas de Dispersão:
+Variância: 81160073.71
+Desvio Padrão: 9008.89
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>PL</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pl</span> <span class="o">=</span> <span class="n">candidatos</span><span class="p">[</span><span class="n">candidatos</span><span class="p">[</span><span class="s1">&#39;SG_PARTIDO&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;PL&#39;</span><span class="p">]</span>
+<span class="n">media</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">pl</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">mediana</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">pl</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">moda</span> <span class="o">=</span> <span class="n">mode</span><span class="p">(</span><span class="n">pl</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">variancia</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">pl</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">desvio_padrao</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">pl</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+
+<span class="n">resultados</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;Medidas de Centralidade:</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Média: </span><span class="si">{</span><span class="n">media</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Mediana: </span><span class="si">{</span><span class="n">mediana</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Moda: </span><span class="si">{</span><span class="n">moda</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+    <span class="s2">&quot;Medidas de Dispersão:</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Variância: </span><span class="si">{</span><span class="n">variancia</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Desvio Padrão: </span><span class="si">{</span><span class="n">desvio_padrao</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">resultados</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Medidas de Centralidade:
+Média: 5285.29
+Mediana: nan
+Moda: 15703.0
+
+Medidas de Dispersão:
+Variância: 117498536.33
+Desvio Padrão: 10839.67
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="analise-por-escolaridade">
+<h3>1.5 Análise por escolaridade<a class="headerlink" href="#analise-por-escolaridade" title="Link to this heading">#</a></h3>
+<section id="quantidade-de-candidatos-por-grau-de-escolaridade">
+<h4>1.5.1 Quantidade de candidatos por grau de escolaridade<a class="headerlink" href="#quantidade-de-candidatos-por-grau-de-escolaridade" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">candidatos</span><span class="p">[[</span><span class="s1">&#39;DS_GRAU_INSTRUCAO&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DS_GRAU_INSTRUCAO            
+SUPERIOR COMPLETO                217
+ENSINO MÉDIO COMPLETO            147
+SUPERIOR INCOMPLETO               39
+ENSINO FUNDAMENTAL COMPLETO       27
+ENSINO FUNDAMENTAL INCOMPLETO     15
+ENSINO MÉDIO INCOMPLETO           14
+LÊ E ESCREVE                       2
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="verificando-a-quantidade-de-candidatos-eleitos-por-grau-de-escolaridade">
+<h4>1.5.2 Verificando a quantidade de candidatos eleitos por grau de escolaridade<a class="headerlink" href="#verificando-a-quantidade-de-candidatos-eleitos-por-grau-de-escolaridade" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">escolaridadeEleitas</span> <span class="o">=</span> <span class="n">eleitos_qt_media</span><span class="p">[</span><span class="s1">&#39;DS_GRAU_INSTRUCAO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">escolaridadeEleitas</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DS_GRAU_INSTRUCAO
+SUPERIOR COMPLETO                29
+SUPERIOR INCOMPLETO               3
+ENSINO MÉDIO COMPLETO             3
+ENSINO FUNDAMENTAL INCOMPLETO     1
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="media-dos-dados-importantes-entre-os-candidatos-por-grau-de-escolaridade">
+<h4>1.5.3 Média dos dados importantes entre os candidatos por grau de escolaridade<a class="headerlink" href="#media-dos-dados-importantes-entre-os-candidatos-por-grau-de-escolaridade" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">disc_media</span> <span class="o">=</span> <span class="n">dados_selecionados</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;DS_GRAU_INSTRUCAO&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">round</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">disc_media</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                               NR_IDADE_DATA_POSSE  QT_VOTOS  VR_RECEITA  \
+DS_GRAU_INSTRUCAO                                                          
+ENSINO FUNDAMENTAL COMPLETO                  51.04    494.39    14058.88   
+ENSINO FUNDAMENTAL INCOMPLETO                49.67   3075.17    57769.11   
+ENSINO MÉDIO COMPLETO                        46.10   1716.55    43722.95   
+ENSINO MÉDIO INCOMPLETO                      44.64    926.71    28028.94   
+LÊ E ESCREVE                                 54.50    494.50    12550.00   
+SUPERIOR COMPLETO                            48.40   7903.91   118687.41   
+SUPERIOR INCOMPLETO                          43.28   4585.34   101444.81   
+
+                               VR_BEM_CANDIDATO  
+DS_GRAU_INSTRUCAO                                
+ENSINO FUNDAMENTAL COMPLETO           234704.00  
+ENSINO FUNDAMENTAL INCOMPLETO         156833.25  
+ENSINO MÉDIO COMPLETO                1877460.30  
+ENSINO MÉDIO INCOMPLETO               262108.23  
+LÊ E ESCREVE                                NaN  
+SUPERIOR COMPLETO                     731842.29  
+SUPERIOR INCOMPLETO                   346524.08  
+</pre></div>
+</div>
+</div>
+</div>
+<section id="grafico-1-4">
+<h5>Gráfico 1.4<a class="headerlink" href="#grafico-1-4" title="Link to this heading">#</a></h5>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">candidatos</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;DS_GRAU_INSTRUCAO&#39;</span><span class="p">,</span>
+  <span class="n">column</span><span class="o">=</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">23</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/f376d119f42410ee968e454b5b8d8bcbcf1c4dce8d3e96d837bafb7b129ad883.png" src="../_images/f376d119f42410ee968e454b5b8d8bcbcf1c4dce8d3e96d837bafb7b129ad883.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="medidas-de-centralidade-e-variancia-por-grau-de-escolaridade">
+<h4>1.5.4 Medidas de centralidade e variância por grau de escolaridade<a class="headerlink" href="#medidas-de-centralidade-e-variancia-por-grau-de-escolaridade" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Superior completo</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">superCompleto</span> <span class="o">=</span> <span class="n">candidatos</span><span class="p">[</span><span class="n">candidatos</span><span class="p">[</span><span class="s1">&#39;DS_GRAU_INSTRUCAO&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;SUPERIOR COMPLETO&#39;</span><span class="p">]</span>
+<span class="n">media</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">superCompleto</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">mediana</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">superCompleto</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">moda</span> <span class="o">=</span> <span class="n">mode</span><span class="p">(</span><span class="n">superCompleto</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">variancia</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">superCompleto</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">desvio_padrao</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">superCompleto</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+
+<span class="n">resultados</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;Medidas de Centralidade:</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Média: </span><span class="si">{</span><span class="n">media</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Mediana: </span><span class="si">{</span><span class="n">mediana</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Moda: </span><span class="si">{</span><span class="n">moda</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+    <span class="s2">&quot;Medidas de Dispersão:</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Variância: </span><span class="si">{</span><span class="n">variancia</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Desvio Padrão: </span><span class="si">{</span><span class="n">desvio_padrao</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">resultados</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Medidas de Centralidade:
+Média: 7903.91
+Mediana: nan
+Moda: 3.0
+
+Medidas de Dispersão:
+Variância: 168013275.23
+Desvio Padrão: 12961.99
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Superior incompleto</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">superincompleto</span> <span class="o">=</span> <span class="n">candidatos</span><span class="p">[</span><span class="n">candidatos</span><span class="p">[</span><span class="s1">&#39;DS_GRAU_INSTRUCAO&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;SUPERIOR INCOMPLETO&#39;</span><span class="p">]</span>
+<span class="n">media</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">superincompleto</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">mediana</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">superincompleto</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">moda</span> <span class="o">=</span> <span class="n">mode</span><span class="p">(</span><span class="n">superincompleto</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">variancia</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">superincompleto</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">desvio_padrao</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">superincompleto</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+
+<span class="n">resultados</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;Medidas de Centralidade:</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Média: </span><span class="si">{</span><span class="n">media</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Mediana: </span><span class="si">{</span><span class="n">mediana</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Moda: </span><span class="si">{</span><span class="n">moda</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+    <span class="s2">&quot;Medidas de Dispersão:</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Variância: </span><span class="si">{</span><span class="n">variancia</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Desvio Padrão: </span><span class="si">{</span><span class="n">desvio_padrao</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">resultados</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Medidas de Centralidade:
+Média: 4585.34
+Mediana: nan
+Moda: 232.0
+
+Medidas de Dispersão:
+Variância: 127008342.23
+Desvio Padrão: 11269.80
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Ensino Médio completo</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">medioCompleto</span> <span class="o">=</span> <span class="n">candidatos</span><span class="p">[</span><span class="n">candidatos</span><span class="p">[</span><span class="s1">&#39;DS_GRAU_INSTRUCAO&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;ENSINO MÉDIO COMPLETO&#39;</span><span class="p">]</span>
+<span class="n">media</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">medioCompleto</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">mediana</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">medioCompleto</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">moda</span> <span class="o">=</span> <span class="n">mode</span><span class="p">(</span><span class="n">medioCompleto</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">variancia</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">medioCompleto</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">desvio_padrao</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">medioCompleto</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+
+<span class="n">resultados</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;Medidas de Centralidade:</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Média: </span><span class="si">{</span><span class="n">media</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Mediana: </span><span class="si">{</span><span class="n">mediana</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Moda: </span><span class="si">{</span><span class="n">moda</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+    <span class="s2">&quot;Medidas de Dispersão:</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Variância: </span><span class="si">{</span><span class="n">variancia</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Desvio Padrão: </span><span class="si">{</span><span class="n">desvio_padrao</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">resultados</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Medidas de Centralidade:
+Média: 1716.55
+Mediana: nan
+Moda: 79.0
+
+Medidas de Dispersão:
+Variância: 39669268.77
+Desvio Padrão: 6298.35
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Ensino fundamental incompleto</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fundIncompleto</span> <span class="o">=</span> <span class="n">candidatos</span><span class="p">[</span><span class="n">candidatos</span><span class="p">[</span><span class="s1">&#39;DS_GRAU_INSTRUCAO&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;ENSINO FUNDAMENTAL INCOMPLETO&#39;</span><span class="p">]</span>
+<span class="n">media</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">fundIncompleto</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">mediana</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">fundIncompleto</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">moda</span> <span class="o">=</span> <span class="n">mode</span><span class="p">(</span><span class="n">fundIncompleto</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">variancia</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">fundIncompleto</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+<span class="n">desvio_padrao</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">fundIncompleto</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">])</span>
+
+<span class="n">resultados</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;Medidas de Centralidade:</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Média: </span><span class="si">{</span><span class="n">media</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Mediana: </span><span class="si">{</span><span class="n">mediana</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Moda: </span><span class="si">{</span><span class="n">moda</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+    <span class="s2">&quot;Medidas de Dispersão:</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Variância: </span><span class="si">{</span><span class="n">variancia</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;Desvio Padrão: </span><span class="si">{</span><span class="n">desvio_padrao</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">resultados</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Medidas de Centralidade:
+Média: 3075.17
+Mediana: nan
+Moda: 163.0
+
+Medidas de Dispersão:
+Variância: 89522686.31
+Desvio Padrão: 9461.64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="analise-das-relacoes-entre-variaveis">
+<h2>2 Análise das relações entre variáveis<a class="headerlink" href="#analise-das-relacoes-entre-variaveis" title="Link to this heading">#</a></h2>
+<p>Faça uma análise das relações entre as variáveis em questão. Você pode começar
+com uma análise gráfica das relações entre variáveis, para depois partir para
+análise de correlação. Explique se existem variáveis com forte impacto no número de votos e na chance do candidato ser eleito.</p>
+<section id="averiguando-se-existe-alguma-correlacao-entre-o-numero-de-votos-e-a-receita-gasta-na-campanha">
+<h3>2.1 Averiguando se existe alguma correlação entre o número de votos e a receita gasta na campanha<a class="headerlink" href="#averiguando-se-existe-alguma-correlacao-entre-o-numero-de-votos-e-a-receita-gasta-na-campanha" title="Link to this heading">#</a></h3>
+<p>Para essa análise usaremos o metódo linear para averiguar se há alguma correlação entre essas duas variáveis. A seguir o <em>Gráfico 2.1</em> para termos uma representação visual dessa análise.</p>
+<section id="grafico-2-1">
+<h4>Gráfico 2.1<a class="headerlink" href="#grafico-2-1" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">lmplot</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">candidatos</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;VR_RECEITA&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;QT_VOTOS&quot;</span><span class="p">,</span>
+    <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;muted&quot;</span><span class="p">,</span> <span class="n">ci</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">scatter_kws</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;s&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="s2">&quot;alpha&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x1f9e8ec3560&gt;
+</pre></div>
+</div>
+<img alt="../_images/0d813256082f22af5d16a28fdcf62054eecb419faaa098ac51f98ba2ede9376f.png" src="../_images/0d813256082f22af5d16a28fdcf62054eecb419faaa098ac51f98ba2ede9376f.png" />
+</div>
+</div>
+<p>É perceptível que a quantidade de dinheiro investido na campanha influencia diretamente na quantidade de votos recebidos, com os candidatos recebendo mais votos quando investem mais em sua campanha. Adiante, usaremos outros métodos de análise para termos maior precisão na análise.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">({</span>
+    <span class="s1">&#39;pearson&#39;</span><span class="p">:</span> <span class="n">candidatos</span><span class="o">.</span><span class="n">VR_RECEITA</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">candidatos</span><span class="o">.</span><span class="n">QT_VOTOS</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;pearson&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;spearman&#39;</span><span class="p">:</span> <span class="n">candidatos</span><span class="o">.</span><span class="n">VR_RECEITA</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">candidatos</span><span class="o">.</span><span class="n">QT_VOTOS</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;spearman&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;kendall&#39;</span><span class="p">:</span> <span class="n">candidatos</span><span class="o">.</span><span class="n">VR_RECEITA</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">candidatos</span><span class="o">.</span><span class="n">QT_VOTOS</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;kendall&#39;</span><span class="p">)</span>
+<span class="p">},</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;correlacao&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>correlacao</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>pearson</th>
+      <td>0.561157</td>
+    </tr>
+    <tr>
+      <th>spearman</th>
+      <td>0.716357</td>
+    </tr>
+    <tr>
+      <th>kendall</th>
+      <td>0.521898</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Analisando os dados com os métodos Pearson, Kendall e Spearman chegamos aos seguintes resultados:</p>
+<ul class="simple">
+<li><p>A correlação Pearson indica que há uma correlação positiva moderada entre os dados, pois o resultado está entre 0,5 e 0,7;</p></li>
+<li><p>A correlação Spearman mostra haver uma correlação positiva forte entre os dados, pois o resultado está entre 0,7 e 1;</p></li>
+<li><p>A correlação Kendall aponta uma média concordância entre as duas variáveis, pois seu valor está entre 0,5 e 1.</p></li>
+</ul>
+<p>Em resumo, esses valores indicam que há uma média relação positiva entre as duas variáveis, sendo mais forte segundo o método de Spearman, seguido por Pearson e depois Kendall.</p>
+</section>
+</section>
+<section id="verificando-se-ha-alguma-relacao-entre-os-bens-dos-candidatos-e-os-a-quantidade-de-votos-recebidos">
+<h3>2.2 Verificando se há alguma relação entre os bens dos candidatos e os a quantidade de votos recebidos<a class="headerlink" href="#verificando-se-ha-alguma-relacao-entre-os-bens-dos-candidatos-e-os-a-quantidade-de-votos-recebidos" title="Link to this heading">#</a></h3>
+<p>Inicialmente usaremos o metódo linear para investigar se há alguma correlação entre essas duas variáveis. A seguir o <em>Gráfico 2.1</em> para termos uma representação visual dessa análise.</p>
+<section id="grafico-2-2">
+<h4>Gráfico 2.2<a class="headerlink" href="#grafico-2-2" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">lmplot</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">candidatos</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;VR_BEM_CANDIDATO&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;QT_VOTOS&quot;</span><span class="p">,</span>
+    <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;muted&quot;</span><span class="p">,</span> <span class="n">ci</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">scatter_kws</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;s&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="s2">&quot;alpha&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x1f9e8d3b590&gt;
+</pre></div>
+</div>
+<img alt="../_images/5ca5b8efc76ef5fda72228ef03b975855218539e525b16253a371b414dd4f91a.png" src="../_images/5ca5b8efc76ef5fda72228ef03b975855218539e525b16253a371b414dd4f91a.png" />
+</div>
+</div>
+<p>É notório que não há uma relação concreta entre as variáveis, fazendo com que seja difícil concluir se a quantidade de bens do candidato influencia diretamente na quantidade de votos que ele recebeu. Para termos uma conclusão mais precisa, utilizaremos outros métodos de análise.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">({</span>
+    <span class="s1">&#39;pearson&#39;</span><span class="p">:</span> <span class="n">candidatos</span><span class="o">.</span><span class="n">VR_BEM_CANDIDATO</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">candidatos</span><span class="o">.</span><span class="n">QT_VOTOS</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;pearson&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;spearman&#39;</span><span class="p">:</span> <span class="n">candidatos</span><span class="o">.</span><span class="n">VR_BEM_CANDIDATO</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">candidatos</span><span class="o">.</span><span class="n">QT_VOTOS</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;spearman&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;kendall&#39;</span><span class="p">:</span> <span class="n">candidatos</span><span class="o">.</span><span class="n">VR_BEM_CANDIDATO</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">candidatos</span><span class="o">.</span><span class="n">QT_VOTOS</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;kendall&#39;</span><span class="p">)</span>
+<span class="p">},</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;correlacao&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>correlacao</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>pearson</th>
+      <td>0.027539</td>
+    </tr>
+    <tr>
+      <th>spearman</th>
+      <td>0.443874</td>
+    </tr>
+    <tr>
+      <th>kendall</th>
+      <td>0.302850</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Analisando os dados com os métodos Pearson, Kendall e Spearman chegamos aos seguintes resultados:</p>
+<ul class="simple">
+<li><p>A correlação Pearson está muito baixa, indicando uma correlação quase inexistente entre as duas variáveis, pois o resultado está abaixo de 0,1;</p></li>
+<li><p>A correlação Spearman está mais alta que a Pearson, mostrando que há uma relação crescente e decrescente entre as variáveis, mas não necessáriamente linear, entretanto, a relação ainda é baixa, pois seu valor está em 0,3 e 0,5;</p></li>
+<li><p>A correlação Kendall aponta uma baixa concordância entre as duas variáveis, pois seu valor está entre 0,3 e 1.</p></li>
+</ul>
+<p>Em resumo, esses valores indicam que há uma baixa relação entre as duas variáveis, sendo incorreto afirmar com propriedade que uma variável influencia diretamente a outra.</p>
+</section>
+</section>
+<section id="investigando-se-a-idade-dos-candidatos-influencia-a-quantidade-de-dinheiro-gasto-na-campanha">
+<h3>2.3 Investigando se a idade dos candidatos influencia a quantidade de dinheiro gasto na campanha<a class="headerlink" href="#investigando-se-a-idade-dos-candidatos-influencia-a-quantidade-de-dinheiro-gasto-na-campanha" title="Link to this heading">#</a></h3>
+<p>Inicialmente utilizaremos uma análise linear para verificar se há alguma relação entre essas duas variáveis. A seguir o <em>Gráfico 2.3</em> demonstra visualmente o resultado dessa análise.</p>
+<section id="grafico-2-3">
+<h4>Gráfico 2.3<a class="headerlink" href="#grafico-2-3" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">lmplot</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">candidatos</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;VR_RECEITA&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;NR_IDADE_DATA_POSSE&quot;</span><span class="p">,</span>
+    <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;muted&quot;</span><span class="p">,</span> <span class="n">ci</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">scatter_kws</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;s&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="s2">&quot;alpha&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x1f9e6a1cbf0&gt;
+</pre></div>
+</div>
+<img alt="../_images/df55537194c7195cb0dca9844d4a4720327e1145a133605458af4976bb28adcb.png" src="../_images/df55537194c7195cb0dca9844d4a4720327e1145a133605458af4976bb28adcb.png" />
+</div>
+</div>
+<p>Não é possível concluir nada a partir da análise linear feita para analisar se haveria alguma correlação entre as variáveis, portanto, iremos partir para outros métodos de análise para vê se conseguimos concluir algo.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">({</span>
+    <span class="s1">&#39;pearson&#39;</span><span class="p">:</span> <span class="n">candidatos</span><span class="o">.</span><span class="n">VR_RECEITA</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">candidatos</span><span class="o">.</span><span class="n">NR_IDADE_DATA_POSSE</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;pearson&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;spearman&#39;</span><span class="p">:</span> <span class="n">candidatos</span><span class="o">.</span><span class="n">VR_RECEITA</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">candidatos</span><span class="o">.</span><span class="n">NR_IDADE_DATA_POSSE</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;spearman&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;kendall&#39;</span><span class="p">:</span> <span class="n">candidatos</span><span class="o">.</span><span class="n">VR_RECEITA</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">candidatos</span><span class="o">.</span><span class="n">NR_IDADE_DATA_POSSE</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;kendall&#39;</span><span class="p">)</span>
+<span class="p">},</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;correlacao&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>correlacao</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>pearson</th>
+      <td>0.074681</td>
+    </tr>
+    <tr>
+      <th>spearman</th>
+      <td>0.018691</td>
+    </tr>
+    <tr>
+      <th>kendall</th>
+      <td>0.009950</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Analisando os dados com os métodos Pearson, Kendall e Spearman chegamos aos seguintes resultados:</p>
+<ul class="simple">
+<li><p>A correlação Pearson está muito baixa, indicando uma correlação quase inexistente entre as duas variáveis, pois o resultado está abaixo de 0,1;</p></li>
+<li><p>A correlação Spearman está mais baixa que a Pearson, mostrando que há uma correlação ainda mais fraca entre as variáveis;</p></li>
+<li><p>A correlação Kendall aponta uma concordância inexistente entre as duas variáveis, pois seu valor está abaixo de 0,1.</p></li>
+</ul>
+<p>Em resumo, esses valores indicam que não há uma relação entre as duas variáveis, sendo impossível dizer que uma variável influencia diretamente a outra.</p>
+</section>
+</section>
+</section>
+<section id="analise-de-regressao">
+<h2>3 Análise de regressão<a class="headerlink" href="#analise-de-regressao" title="Link to this heading">#</a></h2>
+<p>Analise a relação entre a quantidade de votos que um candidato recebe com outras variáveis. Você pode começar com regressão linear simples, considerando apenas uma variável por vez, e depois fazer regressão múltipla. Descreva bem as suas conclusões, de forma clara para um público geral.</p>
+<section id="analisando-se-e-possivel-prever-a-quantia-de-receita-gasta-ideal-para-um-candidato-se-eleger-numa-campanha">
+<h3>3.1 Analisando se é possivel prever a quantia de receita gasta ideal para um candidato se eleger numa campanha<a class="headerlink" href="#analisando-se-e-possivel-prever-a-quantia-de-receita-gasta-ideal-para-um-candidato-se-eleger-numa-campanha" title="Link to this heading">#</a></h3>
+<p>Vamos iniciar com uma análise de regressão linear e vê que resultados obtivemos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">predictors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">]</span>
+<span class="n">outcome</span> <span class="o">=</span> <span class="s1">&#39;VR_RECEITA&#39;</span>
+
+<span class="n">imputer</span> <span class="o">=</span> <span class="n">SimpleImputer</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">)</span>
+<span class="n">candidatos_imputed</span> <span class="o">=</span> <span class="n">candidatos</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">candidatos_imputed</span><span class="p">[</span><span class="n">predictors</span> <span class="o">+</span> <span class="p">[</span><span class="n">outcome</span><span class="p">]]</span> <span class="o">=</span> <span class="n">imputer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">candidatos</span><span class="p">[</span><span class="n">predictors</span> <span class="o">+</span> <span class="p">[</span><span class="n">outcome</span><span class="p">]])</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">candidatos_imputed</span><span class="p">[</span><span class="n">predictors</span><span class="p">],</span> <span class="n">candidatos_imputed</span><span class="p">[</span><span class="n">outcome</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;b0 (intercept): </span><span class="si">{</span><span class="n">model</span><span class="o">.</span><span class="n">intercept_</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;b1 (coefficient): </span><span class="si">{</span><span class="n">model</span><span class="o">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>b0 (intercept): 47853.20
+b1 (coefficient): 7.50
+</pre></div>
+</div>
+</div>
+</div>
+<p>Neste caso foi necessário imputar alguns valores NAN e fazê-los se adequarem à média dos dados, caso contrário não daria para fazer a análise, dito isso, vamos vê os resultados que obtivemos:</p>
+<ul class="simple">
+<li><p>b0 representa o valor da receita gasta na campanha quando o número de votos recebidos for igual a zero, sendo a base de gastos iniciais do candidato. O resultado da análise sugere que precisa-se ter muito mais que 47853 para se obter um voto;</p></li>
+<li><p>b1 representa a inclinação da linha de regressão, sendo seu valor 7,50. Isso significa que para cada voto recebido, espera-se um aumento de R$7,50 reais no valor da receita do candidato.</p></li>
+</ul>
+<p>A seguir iremos avaliar o modelo e averiguar sua precição:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">candidatos_imputed</span> <span class="o">=</span> <span class="n">candidatos</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">imputer</span> <span class="o">=</span> <span class="n">SimpleImputer</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">)</span>
+<span class="n">candidatos_imputed</span><span class="p">[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">imputer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">candidatos_imputed</span><span class="p">[[</span><span class="s1">&#39;QT_VOTOS&#39;</span><span class="p">]])</span>
+<span class="n">candidatos_imputed</span><span class="p">[</span><span class="s1">&#39;VR_RECEITA&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">imputer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">candidatos_imputed</span><span class="p">[[</span><span class="s1">&#39;VR_RECEITA&#39;</span><span class="p">]])</span>
+
+<span class="n">fitted</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">candidatos_imputed</span><span class="p">[</span><span class="n">predictors</span><span class="p">])</span>
+<span class="n">RMSE</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">candidatos_imputed</span><span class="p">[</span><span class="n">outcome</span><span class="p">],</span> <span class="n">fitted</span><span class="p">))</span>
+<span class="n">r2</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">candidatos_imputed</span><span class="p">[</span><span class="n">outcome</span><span class="p">],</span> <span class="n">fitted</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Root Mean Square Error (RMSE): </span><span class="si">{</span><span class="n">RMSE</span><span class="si">:</span><span class="s1">.0f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Coefficient of determination (r2): </span><span class="si">{</span><span class="n">r2</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Root Mean Square Error (RMSE): 118986
+Coefficient of determination (r2): 0.3006
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para essa análise também foi necessário imputar os valores NAN para que o código pudesse funcionar perfeitamente, dito isso, vamos averiguar quão preciso é o modelo criado:</p>
+<ul class="simple">
+<li><p>RMSE é uma medida da diferença entre os valores observados e os valores previstos pelo modelo. No contexto atual, o RMSE ser 118986 é péssimo, pois sugere uma grande discrepância entre os valores reais e os previstos pelo modelo.</p></li>
+<li><p>R2 é uma medida que indica a proporção da variabilidade na variável de resposta (VR_RECEITA) que é explicada pelo modelo. Neste caso, o valor de 0,3006 indica que cerca de 30.06% da variabilidade na receita de campanha é explicada pelas variáveis preditoras incluídas no modelo.</p></li>
+</ul>
+<p>Com isso, concluímos que é difícil prever um gasto ideal de receita para um candidado poder ser eleito, sugerindo que outras variáveis também influenciam no eleição de um candidato.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Welcome to your Jupyter Book</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#carregamento-dos-dados">Carregamento dos dados</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analise-exploratoria-de-dados">1 Análise exploratória de dados</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analise-por-genero">1.1 Análise por gênero</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#quantidade-de-candidatos-por-genero">1.1.1 Quantidade de candidatos por gênero</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#verificando-a-quantidade-de-candidatos-eleitos-por-genero">1.1.2 Verificando a quantidade de candidatos eleitos por gênero</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#media-de-dados-importantes-entre-cadidatos-por-genero">1.1.3 Média de dados importantes entre cadidatos por gênero</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-1-1">Gráfico 1.1</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#medidas-de-centralidade-e-variancia-dos-candidatos-por-genero">1.1.4 Medidas de centralidade e variância dos candidatos por gênero</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analise-por-cor-ou-raca">1.2 Análise por cor ou raça</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#quantidade-de-candidatos-por-cor-ou-raca">1.2.1 Quantidade de candidatos por cor ou raça</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#verificando-a-quantidade-de-candidatos-eleitos-por-cor-ou-raca">1.2.2 Verificando a quantidade de candidatos eleitos por cor ou raça</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#media-de-dados-importantes-entre-candidatos-com-base-em-sua-cor-ou-raca">1.2.3 Média de dados importantes entre candidatos com base em sua cor ou raça</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-1-2">Gráfico 1.2</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#medidas-de-centralidade-e-variancia-dos-candidatos-por-cor-ou-raca">1.2.4 Medidas de centralidade e variância dos candidatos por cor ou raça</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analise-por-ocupacao">1.3 Análise por ocupação</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#quantidade-de-candidatos-por-ocupacao">1.3.1 Quantidade de candidatos por ocupação</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#verificando-a-quantidade-de-candidatos-eleitos-por-ocupacao">1.3.2 Verificando a quantidade de candidatos eleitos por ocupação</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#media-dos-dados-importantes-entre-os-candidatos-por-ocupacao">1.3.3 Média dos dados importantes entre os candidatos por ocupação</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#medidas-de-centralidade-e-variancia-dos-candidatos-por-ocupacao">1.3.4 Medidas de centralidade e variância dos candidatos por ocupação</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analise-por-partido-politico">1.4 Análise por partido político</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#quantidade-de-candidatos-por-partido">1.4.1 Quantidade de candidatos por partido</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#verificando-a-quantidade-de-cadidantos-eleitos-por-partido">1.4.2 Verificando a quantidade de cadidantos eleitos por partido</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#media-dos-dados-importantes-entre-os-candidatos-por-partido">1.4.3 Média dos dados importantes entre os candidatos por partido</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-1-3">Gráfico 1.3</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#medidas-de-centralidade-e-variancia-por-partido">1.4.4 Medidas de centralidade e variância por partido</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analise-por-escolaridade">1.5 Análise por escolaridade</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#quantidade-de-candidatos-por-grau-de-escolaridade">1.5.1 Quantidade de candidatos por grau de escolaridade</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#verificando-a-quantidade-de-candidatos-eleitos-por-grau-de-escolaridade">1.5.2 Verificando a quantidade de candidatos eleitos por grau de escolaridade</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#media-dos-dados-importantes-entre-os-candidatos-por-grau-de-escolaridade">1.5.3 Média dos dados importantes entre os candidatos por grau de escolaridade</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-1-4">Gráfico 1.4</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#medidas-de-centralidade-e-variancia-por-grau-de-escolaridade">1.5.4 Medidas de centralidade e variância por grau de escolaridade</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analise-das-relacoes-entre-variaveis">2 Análise das relações entre variáveis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#averiguando-se-existe-alguma-correlacao-entre-o-numero-de-votos-e-a-receita-gasta-na-campanha">2.1 Averiguando se existe alguma correlação entre o número de votos e a receita gasta na campanha</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-2-1">Gráfico 2.1</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verificando-se-ha-alguma-relacao-entre-os-bens-dos-candidatos-e-os-a-quantidade-de-votos-recebidos">2.2 Verificando se há alguma relação entre os bens dos candidatos e os a quantidade de votos recebidos</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-2-2">Gráfico 2.2</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#investigando-se-a-idade-dos-candidatos-influencia-a-quantidade-de-dinheiro-gasto-na-campanha">2.3 Investigando se a idade dos candidatos influencia a quantidade de dinheiro gasto na campanha</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-2-3">Gráfico 2.3</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analise-de-regressao">3 Análise de regressão</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisando-se-e-possivel-prever-a-quantia-de-receita-gasta-ideal-para-um-candidato-se-eleger-numa-campanha">3.1 Analisando se é possivel prever a quantia de receita gasta ideal para um candidato se eleger numa campanha</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Bruno Souza
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
